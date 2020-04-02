@@ -16,8 +16,8 @@ FROM alpine:3.8
 
 RUN apk update && apk add --no-cache --virtual ca-certificates
 
-COPY /go/bin/pebble /usr/bin/pebble
-COPY /pebble-src/test/ /test/
+COPY --from=0 /go/bin/pebble /usr/bin/pebble
+COPY --from=0 /pebble-src/test/ /test/
 
 CMD [ "/usr/bin/pebble" ]
 
