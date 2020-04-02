@@ -39,11 +39,12 @@ const (
 	// Note: We deliberately pick endpoint paths that differ from Boulder to
 	// exercise clients processing of the /directory response
 	// We export the DirectoryPath so that the pebble binary can reference it
-	DirectoryPath     = "/dir"
-	noncePath         = "/nonce-plz"
-	newAccountPath    = "/sign-me-up"
+	DirectoryPath     = "/directory"
+	RootCertPath      = "/root"
+	noncePath         = "/new-nonce"
+	newAccountPath    = "/new-acct"
 	acctPath          = "/my-account/"
-	newOrderPath      = "/order-plz"
+	newOrderPath      = "/new-order"
 	orderPath         = "/my-order/"
 	orderFinalizePath = "/finalize-order/"
 	authzPath         = "/authZ/"
@@ -56,7 +57,6 @@ const (
 	// Theses entrypoints are not a part of the standard ACME endpoints,
 	// and are exposed by Pebble as an integration test tool. We export
 	// RootCertPath so that the pebble binary can reference it.
-	RootCertPath         = "/roots/"
 	rootKeyPath          = "/root-keys/"
 	intermediateCertPath = "/intermediates/"
 	intermediateKeyPath  = "/intermediate-keys/"
